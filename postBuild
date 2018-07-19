@@ -1,5 +1,3 @@
 #!/bin/bash
 
-curl https://gladysnalvarte.github.io/python-novice-inflammation/data/python-novice-inflammation-data.zip --output  python-novice-inflammation-data.zip
-unzip python-novice-inflammation-data.zip
 cd data
