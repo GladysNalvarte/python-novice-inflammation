@@ -14,6 +14,20 @@
     <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/lesson.css" />
     <link rel="stylesheet" type="text/css" href="{{ page.root }}/assets/css/syntax.css" />
 
+<!-- Configure and load Thebe !-->
+<script type="text/x-thebe-config">
+   {
+     bootstrap: true,
+     binderOptions: {
+       repo: "GladysNalvarte/python-novice-inflammation",
+       ref: "gh-pages"
+     },
+     kernelOptions: {
+       name: "python3",
+     },
+   }
+ </script>
+
     {% include favicons.html %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

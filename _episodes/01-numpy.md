@@ -36,10 +36,9 @@ single data values.
 ## Variables
 
 Any Python interpreter can be used as a calculator:
-~~~
+<pre data-executable="true" data-language="python">
 3 + 5 * 4
-~~~
-{: .language-python}
+</pre>
 ~~~
 23
 ~~~
