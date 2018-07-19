@@ -50,10 +50,9 @@ In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
 [variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
 For example, to assign value `60` to a variable `weight_kg`, we would execute:
 
-~~~
+<pre data-executable="true" data-language="python">
 weight_kg = 60
-~~~
-{: .language-python}
+</pre>
 
 From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
 it. In essence, **a variable is just a name for a value**.
@@ -78,25 +77,22 @@ Python knows various types of data. Three common ones are:
 In the example above, variable `weight_kg` has an integer value of `60`.
 To create a variable with a floating point value, we can execute:
 
-~~~
+<pre data-executable="true" data-language="python">
 weight_kg = 60.0
-~~~
-{: .language-python}
+</pre>
 
 And to create a string we simply have to add single or double quotes around some text, for example:
 
-~~~
+<pre data-executable="true" data-language="python">
 weight_kg_text = 'weight in kilograms:'
-~~~
-{: .language-python}
+</pre>
 
 ## Using Variables in Python
 To display the value of a variable to the screen in Python, we can use the `print` function:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(weight_kg)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 60
@@ -105,10 +101,9 @@ print(weight_kg)
 
 We can display multiple things at once using only one `print` command:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(weight_kg_text, weight_kg)
-~~~
-{: .language-python}
+</pre>
 ~~~
 weight in kilograms: 60
 ~~~
@@ -116,10 +111,9 @@ weight in kilograms: 60
 
 Moreover, we can do arithmetics with variables right inside the `print` function:
 
-~~~
+<pre data-executable="true" data-language="python">
 print('weight in pounds:', 2.2 * weight_kg)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 weight in pounds: 132.0
@@ -127,10 +121,10 @@ weight in pounds: 132.0
 {: .output}
 
 The above command, however, did not change the value of `weight_kg`:
-~~~
+
+<pre data-executable="true" data-language="python">
 print(weight_kg)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 60
@@ -140,11 +134,10 @@ print(weight_kg)
 To change the value of the `weight_kg` variable, we have to
 **assign** `weight_kg` a new value using the equals `=` sign:
 
-~~~
+<pre data-executable="true" data-language="python">
 weight_kg = 65.0
 print('weight in kilograms is now:', weight_kg)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 weight in kilograms is now: 65.0
@@ -159,12 +152,11 @@ assigning a value to a variable is like putting that sticky note on a particular
 This means that assigning a value to one variable does **not** change the values of other variables.
 For example, let's store the subject's weight in pounds in its own variable:
 
-~~~
+<pre data-executable="true" data-language="python">
 # There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
 print(weight_kg_text, weight_kg, 'and in pounds:', weight_lb)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 weight in kilograms: 65.0 and in pounds: 143.0
@@ -175,11 +167,10 @@ weight in kilograms: 65.0 and in pounds: 143.0
 
 Let's now change `weight_kg`:
 
-~~~
+<pre data-executable="true" data-language="python">
 weight_kg = 100.0
 print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
@@ -206,10 +197,9 @@ In order to load our inflammation data, we need to access
 library if you want to do fancy things with numbers, especially if you have matrices or arrays.  We
 can import NumPy using:
 
-~~~
+<pre data-executable="true" data-language="python">
 import numpy
-~~~
-{: .language-python}
+</pre>
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it
 up on the bench. Libraries provide additional functionality to the basic Python package, much like
@@ -218,10 +208,9 @@ many libraries can sometimes complicate and slow down your programs - so we only
 need for each program. Once we've imported the library, we can ask the library to read our data
 file for us:
 
-~~~
+<pre data-executable="true" data-language="python">
 numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
@@ -267,19 +256,17 @@ we need to assign the array to a variable. Just as we can assign a single value 
 can also assign an array of values to a variable using the same syntax.  Let's re-run
 `numpy.loadtxt` and save the returned data:
 
-~~~
+<pre data-executable="true" data-language="python">
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-~~~
-{: .language-python}
+</pre>
 
 This statement doesn't produce any output because we've assigned the output to the variable `data`.
 If we want to check that the data have been loaded,
 we can print the variable's value:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(data)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 [[ 0.  0.  1. ...,  3.  0.  0.]
@@ -297,10 +284,9 @@ we can manipulate them.
 First,
 let's ask what [type]({{ page.root }}/reference/#type) of thing `data` refers to:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(type(data))
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 <class 'numpy.ndarray'>
@@ -338,10 +324,9 @@ are their daily inflammation measurements.
 
 With the following command, we can see the array's [shape]({{ page.root }}/reference/#shape):
 
-~~~
+<pre data-executable="true" data-language="python">
 print(data.shape)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 (60, 40)
@@ -361,20 +346,18 @@ If we want to get a single number from the array, we must provide an
 do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so
 we will need to use two indices to refer to one specific value:
 
-~~~
+<pre data-executable="true" data-language="python">
 print('first value in data:', data[0, 0])
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 first value in data: 0.0
 ~~~
 {: .output}
 
-~~~
+<pre data-executable="true" data-language="python">
 print('middle value in data:', data[30, 20])
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 middle value in data: 13.0
@@ -420,10 +403,9 @@ For example,
 we can select the first ten days (columns) of values
 for the first four patients (rows) like this:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(data[0:4, 0:10])
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 [[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
@@ -439,10 +421,9 @@ rule is that the difference between the upper and lower bounds is the number of 
 
 We don't have to start slices at 0:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(data[5:10, 0:10])
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 [[ 0.  0.  1.  2.  2.  4.  2.  1.  6.  4.]
@@ -458,12 +439,12 @@ bound, Python uses 0 by default; if we don't include the upper, the slice runs t
 axis, and if we don't include either (i.e., if we just use ':' on its own), the slice includes
 everything:
 
-~~~
+<pre data-executable="true" data-language="python">
 small = data[:3, 36:]
 print('small is:')
 print(small)
-~~~
-{: .language-python}
+</pre>
+
 The above example selects rows 0 through 2 and columns 36 through to the end of the array.
 
 ~~~
@@ -478,21 +459,19 @@ Arrays also know how to perform common mathematical operations on their values. 
 operations with data are arithmetic: addition, subtraction, multiplication, and division.  When you
 do such operations on arrays, the operation is done element-by-element.  Thus:
 
-~~~
+<pre data-executable="true" data-language="python">
 doubledata = data * 2.0
-~~~
-{: .language-python}
+</pre>
 
 will create a new array `doubledata`
 each elements of which is twice the value of the corresponding element in `data`:
 
-~~~
+<pre data-executable="true" data-language="python">
 print('original:')
 print(data[:3, 36:])
 print('doubledata:')
 print(doubledata[:3, 36:])
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 original:
@@ -510,19 +489,17 @@ If, instead of taking an array and doing arithmetic with a single value (as abov
 arithmetic operation with another array of the same shape, the operation will be done on
 corresponding elements of the two arrays.  Thus:
 
-~~~
+<pre data-executable="true" data-language="python">
 tripledata = doubledata + data
-~~~
-{: .language-python}
+</pre>
 
 will give you an array where `tripledata[0,0]` will equal `doubledata[0,0]` plus `data[0,0]`,
 and so on for all other elements of the arrays.
 
-~~~
+<pre data-executable="true" data-language="python">
 print('tripledata:')
 print(tripledata[:3, 36:])
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 tripledata:
@@ -536,10 +513,9 @@ Often, we want to do more than add, subtract, multiply, and divide array element
 to do more complex operations, too.  If we want to find the average inflammation for all patients on
 all days, for example, we can ask NumPy to compute `data`'s mean value:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(numpy.mean(data))
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 6.14875
@@ -577,14 +553,13 @@ Let's use three of those functions to get some descriptive values about the data
 We'll also use multiple assignment,
 a convenient Python feature that will enable us to do this all in one line.
 
-~~~
+<pre data-executable="true" data-language="python">
 maxval, minval, stdval = numpy.max(data), numpy.min(data), numpy.std(data)
 
 print('maximum inflammation:', maxval)
 print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
-~~~
-{: .language-python}
+</pre>
 
 Here we've assigned the return value from `numpy.max(data)` to the variable `maxval`, the value
 from `numpy.min(data)` to `minval`, and so on.
@@ -614,11 +589,10 @@ or the average inflammation per day.
 One way to do this is to create a new temporary array of the data we want,
 then ask it to do the calculation:
 
-~~~
+<pre data-executable="true" data-language="python">
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', patient_0.max())
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 maximum inflammation for patient 0: 18.0
@@ -633,10 +607,9 @@ programmers or their future selves.
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
 
-~~~
+<pre data-executable="true" data-language="python">
 print('maximum inflammation for patient 2:', numpy.max(data[2, :]))
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 maximum inflammation for patient 2: 19.0
@@ -655,10 +628,9 @@ most array functions allow us to specify the axis we want to work on.
 If we ask for the average across axis 0 (rows in our 2D example),
 we get:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(numpy.mean(data, axis=0))
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 [  0.           0.45         1.11666667   1.75         2.43333333   3.15
@@ -675,10 +647,9 @@ print(numpy.mean(data, axis=0))
 As a quick check,
 we can ask this array what its shape is:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(numpy.mean(data, axis=0).shape)
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 (40,)
@@ -689,10 +660,9 @@ The expression `(40,)` tells us we have an N×1 vector,
 so this is the average inflammation per day for all patients.
 If we average across axis 1 (columns in our 2D example), we get:
 
-~~~
+<pre data-executable="true" data-language="python">
 print(numpy.mean(data, axis=1))
-~~~
-{: .language-python}
+</pre>
 
 ~~~
 [ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525
@@ -714,12 +684,12 @@ there is no official plotting library, `matplotlib` is the _de facto_ the standa
 import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
 heat map of our data:
 
-~~~
+<pre data-executable="true" data-language="python">
+%matplotlib inline
 import matplotlib.pyplot
 image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show()
-~~~
-{: .language-python}
+</pre>
 
 ![Heatmap of the Data](../fig/01-numpy_71_0.png)
 
@@ -745,12 +715,11 @@ can see, inflammation rises and falls over a 40-day period.
 
 Let's take a look at the average inflammation over time:
 
-~~~
+<pre data-executable="true" data-language="python">
 ave_inflammation = numpy.mean(data, axis=0)
 ave_plot = matplotlib.pyplot.plot(ave_inflammation)
 matplotlib.pyplot.show()
-~~~
-{: .language-python}
+</pre>
 
 ![Average Inflammation Over Time](../fig/01-numpy_73_0.png)
 
@@ -759,19 +728,17 @@ asked `matplotlib.pyplot` to create and display a line graph of those values.  T
 roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
 fall.  Let's have a look at two other statistics:
 
-~~~
+<pre data-executable="true" data-language="python">
 max_plot = matplotlib.pyplot.plot(numpy.max(data, axis=0))
 matplotlib.pyplot.show()
-~~~
-{: .language-python}
+</pre>
 
 ![Maximum Value Along The First Axis](../fig/01-numpy_75_1.png)
 
-~~~
+<pre data-executable="true" data-language="python">
 min_plot = matplotlib.pyplot.plot(numpy.min(data, axis=0))
 matplotlib.pyplot.show()
-~~~
-{: .language-python}
+</pre>
 
 ![Minimum Value Along The First Axis](../fig/01-numpy_75_3.png)
 
@@ -793,7 +760,7 @@ different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the a
 be titled using the `set_xlabel()` command (or `set_ylabel()`).
 Here are our three plots side by side:
 
-~~~
+<pre data-executable="true" data-language="python">
 import numpy
 import matplotlib.pyplot
 
@@ -817,8 +784,7 @@ axes3.plot(numpy.min(data, axis=0))
 fig.tight_layout()
 
 matplotlib.pyplot.show()
-~~~
-{: .language-python}
+</pre>
 
 ![The Previous Plots as Subplots](../fig/01-numpy_80_0.png)
 
